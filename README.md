@@ -51,12 +51,24 @@ mpiexec -np 4 ./pkmer -f ~/string-graph/inputs/Ecoli_reads_80x.fasta -b 10000000
 # Contact:
 ---------
 Please contact the following for any queries or support:
+
 -Priyanka Ghosh, PNNL (priyanka dot ghosh at pnnl dot gov)
 
 
-# CITE:
----------
+# Publications:
+---------------
 1) Ghosh, Priyanka, Sriram Krishnamoorthy, and Ananth Kalyanaraman. "PaKman: A Scalable Algorithm for Generating Genomic Contigs on Distributed Memory Machines." IEEE Transactions on Parallel and Distributed Systems (TPDS) vol. 32, no. 5, pp. 1191-1209, 2021. DOI: 10.1109/TPDS.2020.3043241. 
 
 2) Ghosh, Priyanka, Sriram Krishnamoorthy, and Ananth Kalyanaraman. "PaKman: Scalable Assembly of Large Genomes on Distributed Memory Machines." In 2019 IEEE International Parallel and Distributed Processing Symposium (IPDPS), pp. 578-589. IEEE, 2019.
+
+# License:
+-----------
+This project is licensed under the BSD License, see LICENSE file for details.
+
+# Acknowledgments:
+------------------
+This research used resources of the NERSC Office of Science User Facility supported by U.S. DOE under Contract No. DE-AC02-05CH11231. 
+This work was supported in part by U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research 
+under award number 63823. Pacific Northwest National Laboratory is operated by Battelle for DOE under Contract DE-AC05-76RL01830. 
+The research is in parts supported by U.S. NSF grants CCF 1815467, OAC 1910213, and CCF 1919122 to Washington State University.
 
