@@ -5,7 +5,7 @@ PaKman presents a solution for the two most time-consuming phases in the full ge
 Contig Generation. A key aspect of our algorithm is its graph data structure (PaK-Graph), which comprises fat nodes (or what we call
 "macro-nodes") that reduce the communication burden during contig generation.
 
-![alt text](https://github.com/pnnl/pakman/tree/master/img/PaKman_schema.png)
+![alt text](https://github.com/pnnl/pakman/blob/master/img/PaKman_schema.png?raw=true)
 
 ## Dependencies:
 ----------------
