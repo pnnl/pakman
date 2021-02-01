@@ -66,19 +66,6 @@
 #include <omp.h>
 #include "serialize.h"
 
-#ifdef USE_CEREAL
-#define CEREAL_THREAD_SAFE 1
-#include <cereal/cereal.hpp>
-#include <cereal/access.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/base_class.hpp>
-#include <cereal/types/vector.hpp>
-#include <cereal/types/unordered_map.hpp>
-#include <cereal/types/memory.hpp>
-#include <cereal/archives/binary.hpp>
-#include <cereal/types/utility.hpp>
-#include <cereal/archives/portable_binary.hpp>
-#endif
 
 #define FREQ_CUTOFF 1
 #define BEGIN_CUTOFF 1

@@ -69,21 +69,6 @@
 #include <omp.h>
 #include <mpi.h>
 #include<cstdint>
-//#include "serial.h"
-
-#ifdef USE_CEREAL
-#define CEREAL_THREAD_SAFE 1
-#include <cereal/cereal.hpp>
-#include <cereal/access.hpp>
-#include <cereal/types/string.hpp>
-#include <cereal/types/base_class.hpp>
-#include <cereal/types/vector.hpp>
-#include <cereal/types/unordered_map.hpp>
-#include <cereal/types/memory.hpp>
-#include <cereal/archives/binary.hpp>
-#include <cereal/types/utility.hpp>
-#include <cereal/archives/portable_binary.hpp>
-#endif
 
 
 #define KMER_LENGTH                    (WINDW_SIZE+1)
@@ -171,14 +156,6 @@ class BasePairVector {
     vec_[idx] = ((vec_[idx]<<bsize) | val) & static_cast<T>(BASE_MASK);
   };
 
-
-#ifdef USE_CEREAL
-  template<class Archive>
-  void serialize(Archive & archive)
-  {
-       archive(vec_, size_); // serialize things by passing them to the archive
-  }
-#endif
 
 
   void push_back(BasePair val) {
@@ -535,14 +512,6 @@ struct WireInfo {
 
   WireInfo()=default;
 
-#ifdef USE_CEREAL
-  template<class Archive>
-  void serialize(Archive & archive)
-  {
-      archive(suffix_id, offset_in_suffix, count);
-  }
-#endif
-
 };
 
 struct PrefixInfo {
@@ -550,14 +519,6 @@ struct PrefixInfo {
   int num_wires;
 
   PrefixInfo()=default;
-  
-  #ifdef USE_CEREAL
-  template<class Archive>
-  void serialize(Archive & archive)
-  {
-      archive(prefix_pos, num_wires);
-  }
-  #endif
 
 };
 
@@ -576,18 +537,6 @@ struct MacroNode {
   //              prefixes(0), prefixes_terminal(0), prefix_count(0),
   //              k_1_mer(BasePairVector()), wiring_info(0) {}
   MacroNode() = default;
-
-#ifdef USE_CEREAL
-  template<class Archive>
-  void serialize(Archive & archive)
-  {
-      archive(suffixes, suffixes_terminal, suffix_count,
-              prefixes, prefix_count, prefixes_terminal,
-              k_1_mer, 
-              wiring_info,
-              prefix_begin_info);
-  }
-#endif
 
 
   void setup_wiring() {
@@ -726,14 +675,6 @@ struct MnodeInfo {
     BasePairVector search_ext;
 
     MnodeInfo()=default;
-
-#ifdef USE_CEREAL
-    template<class Archive>
-    void serialize(Archive & archive)
-    {
-       archive(search_mn, search_ext);
-    }
-#endif
 
 };
 
