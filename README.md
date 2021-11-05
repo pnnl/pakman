@@ -53,7 +53,7 @@ mpiexec -np 4 ./pkmer -f ~/string-graph/inputs/Ecoli_reads_80x.fasta -b 10000000
 ---------
 Please contact the following for any queries or support:
 
--Priyanka Ghosh, PNNL (priyanka dot ghosh at pnnl dot gov)
+-Priyanka Ghosh, (pghscience@gmail.com)
 
 
 ## Publications:
