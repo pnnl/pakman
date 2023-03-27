@@ -370,9 +370,13 @@ void Sliding_window_l (const char *ptr, size_t length) {
   while(p<length) {
     assert(ptr[p]=='>'); /*this will be true*/
 
-    /*skip till newline*/
-    for(; p<length && ptr[p]!='\n'; p++) {/*noop*/ }
-    p++; /*skip the newline*/
+    /*in case of multiple comments (i.e. file header)*/
+    while (ptr[p]=='>'){ 
+        /*skip till newline*/
+        for(; p<length && ptr[p]!='\n'; p++) {/*noop*/ }
+        p++; /*skip the newline*/
+    }
+
 
     if(p+LMER_LENGTH > length) break; /*too short a read*/
     kmer = 0;
@@ -444,9 +448,12 @@ void Sliding_window (const char *ptr, size_t length, int *n_kmers,
   while(p<length) {
     assert(ptr[p]=='>'); /*this will be true*/
 
-    /*skip till newline*/
-    for(; p<length && ptr[p]!='\n'; p++) {/*noop*/ }
-    p++; /*skip the newline*/
+    /* in case of mulitple comment lines */
+    while (ptr[p]=='>'){
+        /*skip till newline*/
+        for(; p<length && ptr[p]!='\n'; p++) {/*noop*/ }
+        p++; /*skip the newline*/
+    }
 
     if(p+KMER_LENGTH > length) break; /*too short a read*/
 
